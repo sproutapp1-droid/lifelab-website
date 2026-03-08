@@ -322,6 +322,76 @@
       background: var(--primary);
     }
 
+    /* ===== MOCKUPS ===== */
+    .mockups {
+      padding: 60px 24px 80px;
+      position: relative; z-index: 1;
+      text-align: center;
+    }
+    .mockups .section-label {
+      text-transform: uppercase; font-size: 12px; font-weight: 600; letter-spacing: 2px;
+      color: var(--primary); margin-bottom: 12px;
+      transition: color var(--transition);
+    }
+    .mockups .section-title {
+      font-size: clamp(24px, 3.5vw, 32px); font-weight: 800; letter-spacing: -1px;
+      margin-bottom: 48px; color: var(--fg);
+      transition: color var(--transition);
+    }
+    .mockups-track-wrapper {
+      position: relative;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
+    .mockups-track {
+      display: flex;
+      gap: 32px;
+      animation: scroll-mockups 30s linear infinite;
+      width: max-content;
+    }
+    .mockups-track:hover { animation-play-state: paused; }
+    @keyframes scroll-mockups {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .phone-frame {
+      flex-shrink: 0;
+      width: 260px;
+      background: var(--bg-subtle);
+      border-radius: 28px;
+      border: 3px solid var(--card-border);
+      padding: 8px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.3), 0 0 0 1px var(--card-border);
+      transition: background var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+    .phone-frame:hover {
+      border-color: var(--card-border-hover);
+      transform: translateY(-4px);
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .phone-notch {
+      width: 80px; height: 6px; border-radius: 3px;
+      background: var(--card-border);
+      margin: 4px auto 8px;
+      transition: background var(--transition);
+    }
+    .phone-screen {
+      border-radius: 20px;
+      overflow: hidden;
+      background: #131620;
+    }
+    .phone-screen img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .mockup-label {
+      font-size: 12px; font-weight: 600; color: var(--fg-muted);
+      margin-top: 14px; letter-spacing: 0.3px;
+      transition: color var(--transition);
+    }
+
     /* ===== FOOTER ===== */
     footer {
       text-align: center; padding: 24px;
@@ -359,6 +429,8 @@
       .features-strip { gap: 16px; }
       .nav-link { display: none; }
       h1 { font-size: 32px; }
+      .phone-frame { width: 220px; }
+      .mockups-track { gap: 20px; }
     }
   </style>
 </head>
@@ -470,6 +542,86 @@
     <div class="feature-pill"><span class="dot"></span> AI-powered insights</div>
     <div class="feature-pill"><span class="dot"></span> iOS &amp; Android</div>
   </div>
+
+  <section class="mockups">
+    <p class="section-label">Sneak Peek</p>
+    <h2 class="section-title">Built for clarity, designed for focus</h2>
+    <div class="mockups-track-wrapper">
+      <div class="mockups-track" id="mockups-track">
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen"><img src="images/main.png" alt="LifeLab Home" loading="lazy" /></div>
+          <p class="mockup-label">Home</p>
+        </div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen"><img src="images/lessons.png" alt="Lessons" loading="lazy" /></div>
+          <p class="mockup-label">Lessons</p>
+        </div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen"><img src="images/experiment.png" alt="Experiments" loading="lazy" /></div>
+          <p class="mockup-label">Experiments</p>
+        </div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen"><img src="images/add-lesson.png" alt="Add Lesson" loading="lazy" /></div>
+          <p class="mockup-label">Add Lesson</p>
+        </div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen"><img src="images/insights.png" alt="Insights" loading="lazy" /></div>
+          <p class="mockup-label">Insights</p>
+        </div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen"><img src="images/results.png" alt="Results" loading="lazy" /></div>
+          <p class="mockup-label">Results</p>
+        </div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen"><img src="images/experiment-2.png" alt="Experiment Detail" loading="lazy" /></div>
+          <p class="mockup-label">Experiment Detail</p>
+        </div>
+        <!-- Duplicated for seamless loop -->
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen"><img src="images/main.png" alt="LifeLab Home" loading="lazy" /></div>
+          <p class="mockup-label">Home</p>
+        </div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen"><img src="images/lessons.png" alt="Lessons" loading="lazy" /></div>
+          <p class="mockup-label">Lessons</p>
+        </div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen"><img src="images/experiment.png" alt="Experiments" loading="lazy" /></div>
+          <p class="mockup-label">Experiments</p>
+        </div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen"><img src="images/add-lesson.png" alt="Add Lesson" loading="lazy" /></div>
+          <p class="mockup-label">Add Lesson</p>
+        </div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen"><img src="images/insights.png" alt="Insights" loading="lazy" /></div>
+          <p class="mockup-label">Insights</p>
+        </div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen"><img src="images/results.png" alt="Results" loading="lazy" /></div>
+          <p class="mockup-label">Results</p>
+        </div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen"><img src="images/experiment-2.png" alt="Experiment Detail" loading="lazy" /></div>
+          <p class="mockup-label">Experiment Detail</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer class="animate animate-d7">
     <p>&copy; 2026 LifeLab &middot; <a href="https://github.com/sproutapp1-droid/lifelab-mobile" target="_blank" rel="noopener">GitHub</a></p>
